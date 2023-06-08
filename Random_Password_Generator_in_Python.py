@@ -1,40 +1,13 @@
-def add(x, y):
-    return x + y
+#Random password generator in python task1:
+import random
+import string
 
-def subtract(x, y):
-    return x - y
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
 
-def multiply(x, y):
-    return x * y
-
-def divide(x, y):
-    if y != 0:
-        return x / y
-    else:
-        print("Error: Division by zero!")
-
-print("Select operation:")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Division")
-
-choice = input("Enter choice (1-4): ")
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-if choice == '1':
-    result = add(num1, num2)
-    print("Result: ", result)
-elif choice == '2':
-    result = subtract(num1, num2)
-    print("Result: ", result)
-elif choice == '3':
-    result = multiply(num1, num2)
-    print("Result: ", result)
-elif choice == '4':
-    result = divide(num1, num2)
-    print("Result: ", result)
-else:
-    print("Invalid choice!")
+# Usage example
+length=int(input("Enter random number: "))
+password = generate_password(length)  # Generate a password with length 10
+print("password is: ",password)
